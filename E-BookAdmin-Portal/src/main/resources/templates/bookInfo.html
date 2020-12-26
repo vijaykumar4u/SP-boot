@@ -1,25 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+.fakeimg {
+	height: 200px;
+	background: #aaa;
+}
+
+.book-info {
+	margin-left: 300px;
+	margin-bottom: 300px
+	
+}
+.book-img{
+width: 20%;
+
+}
+</style>
 </head>
 <body>
+	<div th:replace="fragments/header :: header"></div>
 	<h2>Book Info</h2>
-	<a th:href="@{/book/bookList}">Go Back</a>
-	<a th:href="@{/book/update(id=${book.id})}">Edit</a>
+	
+	
 	<div>
-		<div></div>
+
 		<div>
-		Title :  <span th:text="${book.title}"></span>
-		<div><img alt=""  th:src="@{/image/book/}+${book.id}+'.png'"/></div>
-		<!-- Author : 
+			<div>
+				<img alt="" th:src="@{/image/book/}+${book.id}+'.png'" class="book-img" /><a th:href="@{/book/update(id=${book.id})}">Edit</a>
+				
+				<div class="book-info">
+					Title : <span th:text="${book.title}"></span> author : <span
+						th:text="${book.author}"></span><br> category : <span
+						th:text="${book.category}"></span><br> publisher : <span
+						th:text="${book.publisher}"></span><br> listPrice : <span
+						th:text="${book.listPrice}"></span><br> ourPrice : <span
+						th:text="${book.ourPrice}"></span><br> active : <span
+						th:text="${book.active}"></span><br> publicationDate : <span
+						th:text="${book.publicationDate}"></span><br> language : <span
+						th:text="${book.language}"></span><br> numberOfPages : <span
+						th:text="${book.numberOfPages}"></span><br> format : <span
+						th:text="${book.format}"></span><br> isbn : <span
+						th:text="${book.isbn}"></span><br> shippingWeight : <span
+						th:text="${book.shippingWeight}"></span><br> description : <span
+						th:text="${book.description}"></span><br> inStockNumber : <span
+						th:text="${book.inStockNumber}"></span><br>
+
+				
+			</div>
+			</div>
+
+
+			<!-- Author : 
 		 Publisher Publication Date Language English
 			Spanish Category Management Fiction Engineering Programming Arts
 			Pages Format Paperback Hardcover ISBN Shipping Weight List Price Our
 			Price Number in stock Status Active Inactive Description Upload book
 			image-->
-		</div> 
+		</div>
 	</div>
 
 </body>

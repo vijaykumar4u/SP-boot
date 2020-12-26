@@ -10,10 +10,12 @@ public class HomeController {
 		return "index";
 
 	}
-	@GetMapping("/public")
-	public String Public() {
-		return "public";
-		
+	@GetMapping("/login")
+	public String index() {
+		return "login";
+
 	}
+
+	
 
 }

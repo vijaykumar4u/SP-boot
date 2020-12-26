@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik'sans-serif;
+}
+.main{
+
+width: 100%;
+height: 100vh;
+display: flex;
+overflow: hidden;
+
+}
+.left-col{
+    flex-basis: 50%;
+    background: #fff;
+    position: relative;
+}
+.right-col{
+    flex-basis: 50%;
+    background: rgb(32, 202, 245);
+    position: relative;
+}
+.title{
+    padding-bottom: 150px;
+    text-align: center;
+    color:   rgb(241, 127, 155);
+    
+}
+.logo{
+width: 300px;
+}
+.content-box{
+    width: 290px;
+    position: absolute;
+    top: 170px;
+    left: 80px;
+    
+}
+.content-box h2{
+    font-size: 50px;
+    margin: 15px 0 30px;
+    font-family:cursive;
+
+}
+
+.content-box p{
+font-size: 18px;
+color: #949494;
+
+
+}
+.content-box bookshelf-btn{
+    cursor: pointer;
+
+}
+.content-box addbook-btn{
+    cursor: pointer;
+    padding-right: 25px;
+}
+.center-img{
+    width: 550px;
+        position: absolute;
+        top: 50%;
+        left: 52%;
+        transform: translate(-50%,-55%);
+}
+.rich-book{
+ width: 100px;
+ border-radius: 6px;
+       
+ 
+    
+}
+.rich-rating{
+    width: 105px;
+}
+.book1{
+    position: absolute;
+ left: 50%;
+ margin-top: 70px;
+}
+.book1 .rich-rating{
+    margin-top: 185px;
+    margin-left: -105px;
+}
+
+
+.secret-book{
+    width: 100px;
+    height: 150px;
+    border-radius: 6px;
+       
+   }
+   .secret-rating{
+       width: 105px;
+   }
+   .book2{
+       position: absolute;
+    left: 70%;
+    margin-top: 70px;
+    
+   }
+   .book2 .secret-rating{
+       margin-top: 180px;
+       margin-left: -105px;
+   }
+   .obama-book{
+    width: 100px;
+    height: 150px;
+    border-radius: 6px;
+       
+   }
+   .obama-rating{
+       width: 105px;
+   }
+   .book3{
+       position: absolute;
+    left: 70%;
+    margin-top: 270px;
+    
+   }
+   .book3 .obama-rating{
+       margin-top: 185px;
+       margin-left: -105px;
+   }
+   .jhon-book{
+    width: 100px;
+    height: 150px;
+    border-radius: 6px;
+       
+   }
+   .jhon-rating{
+       width: 105px;
+   }
+   .book4{
+       position: absolute;
+    left: 75%;
+    margin-top: 325px;
+    
+   }
+   .book4 .jhon-rating{
+       margin-top: 180px;
+       margin-left: -105px;
+   }
+   .twitter-image{
+       width: 40px;
+   }
+   .instagram-image{
+    width: 40px;
+   }
+   .fb-image{
+    width: 40px;
+   }
+   .gmail-image{
+    width: 40px;
+   }
+   .social-icons{
+      
+       margin-top: 20px;
+       
+   }
+  .twitter-image{
+    margin-right: 35px;
+
+  }
+  .instagram-image{
+    margin-right: 35px;
+  }
+  .fb-image{
+    margin-right: 35px;
+    
+  }
+  .gmail-image{
+    margin-right: 35px;
+  }
+  .best-seller{
+      
+    padding-left: 25%;
+    padding-top: 40px;
+}
+.badge-img{
+width: 40px;
+margin-left: -60px;
+
+
+
+}
+
+.search-image{
+    width: 27px;
+    margin-right: 40px;
+  position: relative;
+  margin-right: 50px;
+  background-color:rgb(220,220,220);
+  margin-bottom: 5px;
+}
+.search-box{
+    border-radius: 4px;
+    border-style: none;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    margin-left: 10px;
+    text-align: center;
+}
