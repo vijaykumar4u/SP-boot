@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+
+
+      $("#btn").click(function () {
+        var city = $("#city").val();
+        var authenticationKey = "2defe5680983d267063d2cca376e2a35";
+        $.get("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + authenticationKey + "&units=metric", function (data, status) {
+          var city = data.name;
+          var wr = null;
+          var Humidity = data.main.humidity;
+          var temperature = data.main.temp;
+          var country = data.sys.country;
+
+          $.each(data.weather, function (indexInArray, valueOfElement) {
+            wr = valueOfElement.description;
+
+
+
+          });
+          var renderHtml = "<h3 >" + city + "," +
+            country + "</h3>" + "<br>" + "<p>" + "Temperature: " +
+            "<b>" + temperature + "</b>" + "<b>C</b>" + "<br>" + "Weather: "
+            + "<b>" + wr + "</b>" + "<br>" + "Humidity:  " + "<b>"
+            + Humidity + "</b>" + "%" + "<p>";
+
+          $("#wr-container").html(renderHtml);
+        });
+
+
+
+
+      });
+    });
+
+
+
+
+
+  </script>
+  <style>
+    body{
+      background-image: url("wather.png");
+    }
+    .main {
+      margin: 7% 35%;
+
+    }
+
+    .container {
+      background-color: lightgray;
+      width: 600px;
+      height: 300px;
+      margin-top: 20px;
+    }
+
+    #wr-container h3 {
+
+      text-align: center;
+      padding-top: 30px;
+
+
+    }
+h1{
+text-align: center;
+color: mintcream;
+padding: 30px;
+
+}
+    #getweather {
+
+      color:white;
+      size: 50px;
+      font-size: 20px;
+
+
+    }
+
+    #wr-container {
+      margin-left: -100px;
+    }
+
+    p {
+      padding-left: 200px;
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Weather Report App search 2 lakh Plus Countries Weather</h1>
+  <div class="main">
+
+    <label id="getweather">WeatherReport:</label>
+
+    <input type="text" id="city" placeholder="enter city name">
+    <button id="btn" class=" btn btn-primary">search</button>
+
+    <div class="container" id="wr-container">
+
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+</body>
+
+</html>
