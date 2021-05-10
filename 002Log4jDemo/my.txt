@@ -1,0 +1,5 @@
+[main] DEBUG com.vijay.Clint 13/12/2020 18:12:03 – This is debug message
+[main] INFO  com.vijay.Clint 13/12/2020 18:12:03 – This is info message
+[main] WARN  com.vijay.Clint 13/12/2020 18:12:03 – This is warn message
+[main] FATAL com.vijay.Clint 13/12/2020 18:12:03 – This is fatal message
+[main] ERROR com.vijay.Clint 13/12/2020 18:12:03 – This is error message
