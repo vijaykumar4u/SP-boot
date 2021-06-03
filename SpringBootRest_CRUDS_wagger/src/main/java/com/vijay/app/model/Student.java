@@ -17,6 +17,21 @@ public class Student {
 	public int getId() {
 		return id;
 	}
+	
+	
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Student(int id, String fname, String lname) {
+		super();
+		this.id = id;
+		this.fname = fname;
+		this.lname = lname;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}

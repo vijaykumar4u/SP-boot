@@ -7,7 +7,7 @@ import com.vijay.app.model.Student;
 public interface StudentService {
 public Student add(Student student) ;
 public Student update(Student student);
-public List<Student> findAll();
+public List<Student> getAllStudents();
 public Student findById(int id);
 public void deleteById(int id);
 }

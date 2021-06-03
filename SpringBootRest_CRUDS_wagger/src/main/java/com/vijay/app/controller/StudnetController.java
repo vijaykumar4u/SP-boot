@@ -13,15 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vijay.app.model.Student;
+import com.vijay.app.service.StudentService;
 import com.vijay.app.service.StudentServiceImpl;
 
 @RestController
 @RequestMapping("/student")
 public class StudnetController {
 	@Autowired
-	private StudentServiceImpl studentServiceImpl;
+	private StudentService studentServiceImpl;
 
 	@PostMapping("/add")
+
 	public Student add(@RequestBody Student student) {
 		return studentServiceImpl.add(student);
 	}
@@ -38,14 +40,16 @@ public class StudnetController {
 		return "deleted succefully";
 
 	}
+
 	@GetMapping("/find/{id}")
 	public Student findById(@PathVariable Integer id) {
 		return studentServiceImpl.findById(id);
-		
+
 	}
+
 	@GetMapping("/getAll")
-	public List<Student> students(){
-		return studentServiceImpl.findAll();
-		
+	public List<Student> students() {
+		return studentServiceImpl.getAllStudents();
+
 	}
 }

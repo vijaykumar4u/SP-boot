@@ -10,52 +10,57 @@ import com.vijay.app.exception.StudentNameNotFoundException;
 import com.vijay.app.exception.StudentRecordNotFoundException;
 import com.vijay.app.model.Student;
 import com.vijay.app.repo.StudentRepo;
+
 @Service
 
-
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 	@Autowired
 	private StudentRepo studentRepo;
+
 	@Override
 	public Student add(Student student) {
-		
+
 		return studentRepo.save(student);
 	}
 
 	@Override
 	public Student update(Student student) {
-	
-		return studentRepo.save(student);
-		
-		
+		Student student2 = studentRepo.save(student);
+		System.out.println("save student "+student2);
+		return student2;
+
 	}
 
 	@Override
-	public List<Student> findAll() {
-		
-		return studentRepo.findAll();
+	public List<Student> getAllStudents() {
+		List<Student> listStudents = studentRepo.findAll();
+		 System.out.println("list of studnets "+listStudents);// for testing junit weather it is hitting
+		// the db or returning the mocked data
+		return listStudents;
+		// return studentRepo.findAll();
 	}
 
 	@Override
 	public Student findById(int id) {
-		Student student=null;
+		Student student = null;
 		try {
-			student= studentRepo.findById(id).get();
-			if(student.getFname()==null || student.getLname()==null) {
+			student = studentRepo.findStudentById(id);
+			System.out.println("find by id "+student);// testing unit
+			if (student.getFname() == null || student.getLname() == null) {
 				throw new StudentNameNotFoundException("No vailid name for this record");
 			}
-			
-		} catch (NoSuchElementException  e) {
+
+		} catch (NoSuchElementException e) {
 			throw new StudentRecordNotFoundException("No Record Found Exception");
 		}
 		return student;
-		
+
 	}
 
 	@Override
 	public void deleteById(int id) {
 		studentRepo.deleteById(id);
-		
+
 	}
 
 }
